@@ -4,7 +4,7 @@ body{margin:2em auto;max-width:900px;padding:0 1em}
 h1,h2,h3{font-weight:600;margin-top:1.5em;margin-bottom:0.5em}
 a{color:inherit;text-decoration:underline}
 figure{margin:1.5em 0}
-img{max-width:100%;border-radius:8px}
+img{max-width:100%;border-radius:8px;cursor:pointer}
 .code,code{background:rgba(135,131,120,0.15);border-radius:3px;padding:0.2em 0.4em;font-family:monospace;font-size:85%}
 .source{border:1px solid #ddd;border-radius:8px;padding:1em;background:#f8f9fa;font-family:monospace;font-size:13px;overflow-x:auto}
 .column-list{display:flex;gap:1em;flex-wrap:wrap}
@@ -13,8 +13,8 @@ img{max-width:100%;border-radius:8px}
 <article class="page sans">
 <header>
 <h1 class="page-title">rag-keyword-metadata</h1>
-<p class="page-description">RAG 시스템에서 키워드 앙상블 메타데이터와 BM25 융합 검색 신호 연구</p>
-<p><a href="https://github.com/leehj67/rag-keyword-metadata">https://github.com/leehj67/rag-keyword-metadata</a></p>
+<p class="page-description">RAG 시스템에서 문서 전처리를 위한 키워드 기반 메타데이터와 BM25 융합 검색 신호 연구</p>
+<p><a href="https://github.com/leehj67/rag-keyword-metadata">🔗 GitHub: https://github.com/leehj67/rag-keyword-metadata</a></p>
 </header>
 <div class="page-body">
 <div class="column-list">
@@ -31,31 +31,15 @@ img{max-width:100%;border-radius:8px}
 </figure>
 </div>
 </div>
-<h3>프로젝트 개요</h3>
-<p>RAG(Retrieval-Augmented Generation) 시스템에서 문서 전처리를 위한 키워드 앙상블 메타데이터와 BM25 스파스 검색 모델의 융합 검색 신호를 연구하는 프로젝트입니다.</p>
-<h3>핵심 아이디어</h3>
-<p>키워드 추출 알고리즘(RAKE, YAKE)으로 문서를 처리하고, 추출된 키워드를 <strong>keyword ensemble metadata</strong>로 결합하여 BM25와 융합한 검색 점수를 사용합니다.</p>
-<p><code>score = (1 - α) * BM25 + α * keyword_overlap</code></p>
+<h3>간략 요약</h3>
+<p>문서에서 RAKE·YAKE로 키워드를 추출해 <strong>keyword ensemble metadata</strong>를 만들고, BM25와 융합(<code>score = (1-α)·BM25 + α·keyword_overlap</code>)하여 RAG 검색 성능을 분석하는 연구입니다.</p>
 <h3>실험</h3>
-<ul>
-<li><strong>데이터셋:</strong> BEIR 벤치마크 (SciFact, NFCorpus, Arguana)</li>
-<li><strong>키워드 추출:</strong> RAKE, YAKE, Ensemble(RAKE+YAKE)</li>
-<li><strong>평가 지표:</strong> NDCG@10, MRR, Recall@10</li>
-</ul>
+<p>BEIR 벤치마크(SciFact, NFCorpus, Arguana)로 키워드 커버리지와 검색 순위 성능 관계를 분석. α 스윕, 커버리지 vs NDCG 트레이드오프 실험 포함.</p>
 <h3>Repository Structure</h3>
 <div class="source"><pre>ai_orchestrator/
-├── assets/                    # Figures and diagrams
-│   ├── retrieval_pipeline.png
-│   ├── alpha_sweep_ndcg.png
-│   └── coverage_vs_ndcg_tradeoff.png
-├── meta/benchmark/             # BEIR benchmark experiments
-│   ├── run_benchmark.py        # Main benchmark runner
-│   ├── evaluate.py            # Evaluation logic
-│   ├── retrievers.py          # BM25 + keyword fusion retrievers
-│   ├── datasets.py            # BEIR dataset loading
-│   ├── data/                  # BEIR datasets
-│   └── results/               # Benchmark outputs
-├── run_benchmark.py            # Entry point
+├── assets/           # Figures (retrieval_pipeline, alpha_sweep, coverage_vs_ndcg)
+├── meta/benchmark/   # run_benchmark.py, evaluate.py, retrievers.py, datasets.py
+├── run_benchmark.py  # Entry point
 └── README.md</pre></div>
 </div>
 </article>
