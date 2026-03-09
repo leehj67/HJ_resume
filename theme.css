@@ -1,0 +1,54 @@
+/* AI & Data Specialist theme - shared across all pages */
+:root {
+	--bg: #0a0e14;
+	--surface: #12171f;
+	--text: #e6e9ef;
+	--text-muted: #8b949e;
+	--accent: #58a6ff;
+	--accent-ai: #7ee787;
+	--accent-data: #79c0ff;
+	--border: #21262d;
+}
+
+@media only screen {
+	body {
+		margin: 0;
+		max-width: 100%;
+		color: var(--text);
+		background: var(--bg);
+		font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+	}
+}
+
+.page { background: var(--bg); }
+.page-body { background: var(--bg); padding: 0 2rem 3rem; max-width: 900px; margin: 0 auto; }
+header { position: relative; color: var(--text) !important; }
+header .page-title, header .page-description, header .page-header-icon, header .page-header-icon * { color: var(--text) !important; }
+header a { color: var(--accent) !important; }
+.page-title { color: var(--text) !important; }
+.page-cover-image { background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d419d 100%); }
+header::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,14,20,0.75) 0%, var(--bg) 100%); pointer-events: none; }
+.page-header-icon-with-cover { position: relative; z-index: 2; }
+header .page-title, header .page-description { position: relative; z-index: 2; }
+a, a.visited { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+table, th, td { border-color: var(--border) !important; }
+th { color: var(--text-muted) !important; }
+td { color: var(--text) !important; }
+.block-color-gray { color: var(--text-muted) !important; }
+hr { border-bottom-color: var(--border) !important; }
+.collection-title { color: var(--accent-ai) !important; font-weight: 600; }
+h1, h2, h3, h4 { color: var(--text) !important; }
+mark.highlight-gray { background: rgba(126, 231, 135, 0.15) !important; color: var(--accent-ai) !important; }
+mark.highlight-red { background: rgba(88, 166, 255, 0.2) !important; color: var(--accent-data) !important; }
+mark.highlight-default { background: rgba(139, 148, 158, 0.2) !important; color: var(--text-muted) !important; }
+mark.highlight-gray_background { background: rgba(126, 231, 135, 0.2) !important; color: var(--accent-ai) !important; }
+code { color: var(--accent-data) !important; background: rgba(88, 166, 255, 0.15) !important; }
+p, li, span, .bulleted-list, .numbered-list { color: var(--text) !important; }
+.simple-table-header-color { background: var(--surface) !important; color: var(--text) !important; }
+.pdf-relative-link-path { color: var(--text-muted) !important; }
+.bookmark-description { color: var(--text-muted) !important; }
+.table_of_contents-link { color: var(--text-muted) !important; }
+blockquote { border-left-color: var(--border) !important; color: var(--text) !important; }
+.user-icon-inner, .user { color: var(--text) !important; }
+time { color: var(--text-muted) !important; }
