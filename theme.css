@@ -69,3 +69,49 @@ figure.image img, .collection-content img.icon {
 	box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 .url-value, .properties .url-value { color: var(--accent) !important; }
+
+/* 프로젝트 카드 그리드 - 호버 하이라이트 박스 */
+.collection-content:has(h4.collection-title:not(:empty)) { margin-bottom: 2rem; }
+.collection-content:has(h4.collection-title:not(:empty)) table.collection-content { display: block; border: none; }
+.collection-content:has(h4.collection-title:not(:empty)) thead { display: none; }
+.collection-content:has(h4.collection-title:not(:empty)) tbody {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 1rem;
+	margin-top: 0.75rem;
+}
+.collection-content:has(h4.collection-title:not(:empty)) tbody tr {
+	display: block;
+	border: 1px solid var(--border);
+	border-radius: 10px;
+	padding: 1rem;
+	background: var(--surface);
+	transition: all 0.2s ease;
+}
+.collection-content:has(h4.collection-title:not(:empty)) tbody tr:hover {
+	background: rgba(126, 231, 135, 0.12);
+	border-color: var(--accent-ai);
+	box-shadow: 0 4px 12px rgba(126, 231, 135, 0.15);
+}
+.collection-content:has(h4.collection-title:not(:empty)) tbody td {
+	display: block;
+	border: none;
+	padding: 0.25rem 0;
+}
+.collection-content:has(h4.collection-title:not(:empty)) tbody td.cell-title {
+	padding-bottom: 0.5rem;
+	font-weight: 600;
+}
+.collection-content:has(h4.collection-title:not(:empty)) tbody td.cell-title a {
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+.collection-content:has(h4.collection-title:not(:empty)) tbody tr:hover td.cell-title a {
+	color: var(--accent-ai) !important;
+}
+.collection-content:has(h4.collection-title:not(:empty)) tbody td:not(.cell-title) {
+	font-size: 0.8rem;
+	color: var(--text-muted) !important;
+}
