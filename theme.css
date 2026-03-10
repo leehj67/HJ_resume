@@ -2,12 +2,12 @@
 :root {
 	--bg: #0a0e14;
 	--surface: #12171f;
-	--text: #e6e9ef;
-	--text-muted: #8b949e;
+	--text: #f0f4f8;
+	--text-muted: #b1bac4;
 	--accent: #58a6ff;
 	--accent-ai: #7ee787;
 	--accent-data: #79c0ff;
-	--border: #21262d;
+	--border: #30363d;
 }
 
 @media only screen {
@@ -36,6 +36,8 @@ table, th, td { border-color: var(--border) !important; }
 th { color: var(--text-muted) !important; }
 td { color: var(--text) !important; }
 .block-color-gray { color: var(--text-muted) !important; }
+.properties th, .properties td, .property-row th, .property-row td { color: var(--text) !important; }
+details summary { color: var(--text) !important; }
 hr { border-bottom-color: var(--border) !important; }
 .collection-title { color: var(--accent-ai) !important; font-weight: 600; }
 h1, h2, h3, h4 { color: var(--text) !important; }
@@ -60,7 +62,8 @@ header .page-title, header .page-description {
 header .page-header-icon img, header .page-header-icon .icon {
 	filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
 }
-.page-cover-image { min-height: 200px; }
+.page-cover-image { min-height: 180px; }
+header .page-description { font-size: 1rem; opacity: 0.95; margin-top: 0.5rem; }
 figure.image img, .collection-content img.icon {
 	background: var(--surface);
 	border: 1px solid var(--border);
@@ -68,6 +71,8 @@ figure.image img, .collection-content img.icon {
 	padding: 4px;
 	box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
+header .page-header-icon img { background: var(--surface); border: 1px solid var(--border); }
+figure img { background: var(--surface) !important; min-height: 80px; }
 .url-value, .properties .url-value { color: var(--accent) !important; }
 
 /* 프로젝트 카드 그리드 - 호버 하이라이트 박스 */
