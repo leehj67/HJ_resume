@@ -25,6 +25,14 @@ if not found:
     else:
         print("No ChatGPT PNG found")
 
+# 1.5. Copy intro.png to portfolio/public
+intro_png = os.path.join(base, "intro.png")
+if os.path.isfile(intro_png):
+    shutil.copy2(intro_png, os.path.join(dest, "intro.png"))
+    print("Copied: intro.png")
+else:
+    print("intro.png not found in project root")
+
 # 2. Copy folder
 folder = os.path.join(base, "현실을 넘어선, 가상공간을 향하여")
 dest_folder = os.path.join(dest, "현실을 넘어선, 가상공간을 향하여")

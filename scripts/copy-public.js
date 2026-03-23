@@ -25,4 +25,12 @@ function copyRecursive(srcDir, destDir) {
 }
 
 copyRecursive(src, dest);
+
+// intro.png: 프로젝트 루트에 있으면 public으로 복사
+const introPng = path.join(__dirname, "..", "intro.png");
+if (fs.existsSync(introPng)) {
+  fs.copyFileSync(introPng, path.join(dest, "intro.png"));
+  console.log("intro.png copied to public");
+}
+
 console.log("public folder copied successfully");

@@ -8,49 +8,51 @@ export default function Hero() {
       <div className="flex flex-1 flex-col items-center justify-center px-6 py-16">
         {/* 프로필 이미지 - 먼저 등장 */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.92 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{
             duration: 0.8,
             ease: [0.4, 0, 0.2, 1],
-            delay: 0.2,
+            delay: 0.15,
           }}
-          className="mb-10"
+          className="mb-12"
         >
           <div className="relative flex h-36 w-36 items-center justify-center overflow-hidden rounded-full bg-gradient-to-br from-[#1a1a2e] to-[#16213e] ring-2 ring-white/20 sm:h-44 sm:w-44">
             <span className="text-4xl font-light text-white/80">HJ</span>
           </div>
         </motion.div>
 
-        {/* 메인 타이틀 */}
+        {/* 헤드라인 */}
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{
-            duration: 0.7,
+            duration: 0.75,
             ease: [0.4, 0, 0.2, 1],
-            delay: 0.6,
+            delay: 0.5,
           }}
-          className="mb-4 text-center text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl"
+          className="mb-5 max-w-2xl text-center text-2xl font-medium leading-relaxed tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
         >
-          RAG & 데이터 엔지니어
+          복잡한 문제를 구조로 바꾸고,
+          <br />
+          데이터로 결과를 만드는 엔지니어
         </motion.h1>
 
-        {/* 서브 문구 */}
+        {/* 서브 텍스트 */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{
-            duration: 0.7,
+            duration: 0.65,
             ease: [0.4, 0, 0.2, 1],
-            delay: 0.9,
+            delay: 0.85,
           }}
-          className="max-w-xl text-center text-base font-light leading-relaxed text-white/70 sm:text-lg md:text-xl"
+          className="text-sm font-light tracking-[0.2em] text-white/55 sm:text-base"
         >
-          검색을 &apos;되게&apos;가 아니라 &apos;맞게&apos; 만드는 사람
+          Research · Data · Search · Engineering
         </motion.p>
       </div>
     </section>
