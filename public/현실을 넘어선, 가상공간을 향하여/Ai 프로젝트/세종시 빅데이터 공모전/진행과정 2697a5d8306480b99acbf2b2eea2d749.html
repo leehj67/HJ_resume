@@ -1,0 +1,723 @@
+﻿<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>진행과정</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><link rel="stylesheet" href="../../../theme.css"/></head><body><article id="2697a5d8-3064-80b9-9acb-f2b2eea2d749" class="page sans"><header><h1 class="page-title" dir="auto">진행과정</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><div style="display:contents" dir="auto"><h1 id="2697a5d8-3064-804e-aed7-f075b239561f" class="">📊 아동 콘텐츠 데이터 분석 &amp; 생성형 AI 활용 정리</h1></div><div style="display:contents" dir="auto"><h2 id="2697a5d8-3064-80c5-9c66-ede96fd40b11" class="">1. 🎥 데이터 수집 (YouTube API 기반)</h2></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-80bb-8e71-c0586c0651d3" class="bulleted-list"><li style="list-style-type:disc"><strong>채널 선택</strong><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-8015-820f-dc559e117828" class="bulleted-list"><li style="list-style-type:circle">Sesame Street, Super Simple Songs, PBS Kids, Little Baby Bum, Mother Goose Club, Blippi 등</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-80b4-b904-eb79d4e15d96" class="bulleted-list"><li style="list-style-type:disc"><strong>영상 메타데이터 수집</strong><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-803b-898e-d4de39f8307a" class="bulleted-list"><li style="list-style-type:circle">유튜브 Data API + <code>yt_dlp</code> 활용</li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-80ed-84f5-f6646e865fe8" class="bulleted-list"><li style="list-style-type:circle"><code>videos.csv</code> 저장 (video_id, title, channel, view, like 등)</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-80bc-a08a-ed26600625e1" class="bulleted-list"><li style="list-style-type:disc"><strong>자막/오디오 다운로드</strong><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-80ab-a229-f56dbfb4e6f2" class="bulleted-list"><li style="list-style-type:circle">yt-dlp로 자동 자막(.vtt) 추출</li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-801a-acd7-d68786fb6438" class="bulleted-list"><li style="list-style-type:circle">오디오 <code>.wav</code> 추출 (음악/가사 분석용)</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><hr id="2697a5d8-3064-80eb-9758-cf5ffc2f7f40"/></div><div style="display:contents" dir="auto"><h2 id="2697a5d8-3064-806c-b4a4-e0bc390b8e2e" class="">2. 📝 텍스트(가사) 분석</h2></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-8047-b772-d21594fd284c" class="bulleted-list"><li style="list-style-type:disc"><strong>STT(음성→텍스트 변환)</strong><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-8075-8255-fd012d8180fe" class="bulleted-list"><li style="list-style-type:circle"><code>faster-whisper</code> (Whisper 기반 경량화 STT)</li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-80a3-8b76-d4c69f2a420e" class="bulleted-list"><li style="list-style-type:circle">모든 오디오 → 자막/가사 추출 (<code>text_ngrams.csv</code>)</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-8047-a40a-c4a71f37727f" class="bulleted-list"><li style="list-style-type:disc"><strong>반복성 분석</strong><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-80d2-85e9-cc956635c9e1" class="bulleted-list"><li style="list-style-type:circle"><code>caption_repeats.py</code></li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-8076-9401-f2d17ffc601a" class="bulleted-list"><li style="list-style-type:circle">특정 단어나 구절이 반복되는 정도 산출</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-802d-a319-d369acb3f684" class="bulleted-list"><li style="list-style-type:disc"><strong>언어 패턴</strong><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-805b-8ff8-f0ab7e919cfb" class="bulleted-list"><li style="list-style-type:circle">N-gram(uni/bi/tri) 분석</li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-80e0-9ed7-e42cd1b95a67" class="bulleted-list"><li style="list-style-type:circle">WordCloud 생성 → 상위 단어: <em>baby, dance, head, love, night...</em></li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-8005-a2e2-ef937bb55607" class="bulleted-list"><li style="list-style-type:circle">Mood별 단어 히트맵: Excited=활동, Calm=자장가, Playful=가족/사랑</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><hr id="2697a5d8-3064-80cc-a063-f055a1f8d9a5"/></div><div style="display:contents" dir="auto"><h2 id="2697a5d8-3064-80fc-93ea-ed4c3d1c061d" class="">3. 🎶 오디오 분석</h2></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-801d-918f-db2aaa56e1e9" class="bulleted-list"><li style="list-style-type:disc"><strong>리듬/반복성</strong><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-802b-b3a1-e996183a5841" class="bulleted-list"><li style="list-style-type:circle"><code>audio_repeat_score.py</code> → <code>audio_features.csv</code></li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-8085-81c7-cdd541a94c4a" class="bulleted-list"><li style="list-style-type:circle">추출 지표: repeat_score, bpm_est, dominant_period, mood</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-80f9-a786-dac2f0979cda" class="bulleted-list"><li style="list-style-type:disc"><strong>멜로디/음역/조성</strong><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-8092-862a-ed0dafcf1aaa" class="bulleted-list"><li style="list-style-type:circle"><code>melody_key_batch.py</code> → <code>melody_key_features.csv</code></li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-809d-b0b5-d847b603e171" class="bulleted-list"><li style="list-style-type:circle">추출 지표: median_f0_hz, pitch_range_semitones, key(C major 등), voiced_ratio</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-8032-a045-f1f445ccf95b" class="bulleted-list"><li style="list-style-type:disc"><strong>최종 통합</strong><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-8047-b732-dcc226ca5a4a" class="bulleted-list"><li style="list-style-type:circle"><code>audio_full_features.csv</code> (repeat_score + bpm + mood + key + 음역대)</li></ul></div></li></ul></div><div style="display:contents" dir="auto"><hr id="2697a5d8-3064-8084-821f-e47db5c5e30a"/></div><div style="display:contents" dir="auto"><h2 id="2697a5d8-3064-800c-a868-d738a415ebf0" class="">4. 📈 시각화 &amp; 인사이트</h2></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-8045-8329-ef14a9dfc460" class="bulleted-list"><li style="list-style-type:disc"><strong>Mood 분포</strong>: Playful/Excited 곡이 대부분 → 밝은 톤 선호</li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-8018-b3ae-cd2bb8e7bfc4" class="bulleted-list"><li style="list-style-type:disc"><strong>Repeat vs BPM</strong>: BPM 100<del>140, repeat_score 0.2</del>0.4 → 일정한 반복 + 중간 템포</li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-808c-8e20-e3c38636a4d6" class="bulleted-list"><li style="list-style-type:disc"><strong>채널별 반복성</strong>: 교육 중심 채널일수록 반복성 ↑</li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-800b-a3b3-d8b55d3db72f" class="bulleted-list"><li style="list-style-type:disc"><strong>WordCloud &amp; 히트맵</strong>: 단어군별 차이 → Excited=행동, Calm=자장가, Playful=가족</li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-8057-8c98-c6b3df201641" class="bulleted-list"><li style="list-style-type:disc"><strong>Pitch range</strong>: 대체로 1옥타브 이내</li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-8052-9f52-da363fecec8b" class="bulleted-list"><li style="list-style-type:disc"><strong>Key 분포</strong>: 메이저 키 위주 (C/G major) → 밝고 친근한 느낌</li></ul></div><div style="display:contents" dir="auto"><hr id="2697a5d8-3064-803b-85cf-e7e15084fcc4"/></div><div style="display:contents" dir="auto"><h2 id="2697a5d8-3064-8034-9079-e06bf65e468d" class="">5. 🤖 생성형 AI 활용 가이드라인</h2></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-8096-ba40-e0896e2b9b10" class="bulleted-list"><li style="list-style-type:disc"><strong>음악(멜로디)</strong><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-8020-8ade-d14b64ea9178" class="bulleted-list"><li style="list-style-type:circle">조건: BPM 100~140, C major, pitch range ≤ 12 semitones, 반복 패턴 포함</li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-8062-ae9a-dbbc07d2d456" class="bulleted-list"><li style="list-style-type:circle">프롬프트 예시:<div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2697a5d8-3064-80e8-8bda-fdfeb33b77c9" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">Create a children&#x27;s song melody in C major, 120 BPM.
+The melody should stay within one octave (C4 to G5),
+with repeating motifs and playful mood.
+
+</code></pre></div></li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-80b0-9923-c7ea4cf3a7b3" class="bulleted-list"><li style="list-style-type:disc"><strong>가사(텍스트)</strong><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-800b-a75e-c6308b86bbd8" class="bulleted-list"><li style="list-style-type:circle">조건: 짧고 반복적, 핵심 단어(동물, 가족, 신체, 행동) 포함</li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-807f-b161-ffe6336807f9" class="bulleted-list"><li style="list-style-type:circle">프롬프트 예시:<div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2697a5d8-3064-8006-8c22-c702b5faf9e2" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">Write Korean children&#x27;s lyrics using body parts.
+Repeat words like &#x27;머리, 어깨, 무릎, 발&#x27; in a playful mood.
+
+</code></pre></div></li></ul></div></li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-806c-a369-f5e3b65f74ba" class="bulleted-list"><li style="list-style-type:disc"><strong>캐릭터/비주얼</strong><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-806c-b28f-d0e543677c46" class="bulleted-list"><li style="list-style-type:circle">조건: 귀여운 동물·친숙한 대상, 밝은 색상, 단순한 형태</li></ul></div><div style="display:contents" dir="auto"><ul id="2697a5d8-3064-805e-9462-e92bb98479da" class="bulleted-list"><li style="list-style-type:circle">프롬프트 예시:<div style="display:contents" dir="auto"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2697a5d8-3064-801b-8d7d-f74af30aecd4" class="code code-wrap"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">Design a cute character holding Korean Hangul letters.
+Style: bright colors, round shapes, child-friendly.
+
+</code></pre></div></li></ul></div></li></ul></div></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
