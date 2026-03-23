@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
 
 interface IntroBlock {
   title: string;
@@ -102,13 +101,11 @@ export default function Intro({ onComplete }: IntroProps) {
               }}
               className="relative flex max-h-[70vh] w-full max-w-2xl items-center justify-center"
             >
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/intro.png"
                 alt=""
-                width={800}
-                height={600}
                 className="max-h-[70vh] w-auto object-contain"
-                priority
               />
             </motion.div>
           )}
