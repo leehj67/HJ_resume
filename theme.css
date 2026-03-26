@@ -120,3 +120,9 @@ figure img { background: var(--surface) !important; min-height: 80px; }
 	font-size: 0.8rem;
 	color: var(--text-muted) !important;
 }
+
+/* 하위 페이지의 인라인 기본색(rgba/rgb)보다 우선 적용되도록 텍스트를 강제 흰색 처리 */
+.page,
+.page *:not(img):not(video):not(svg):not(path):not(rect):not(circle):not(ellipse):not(line):not(polygon):not(polyline) {
+	color: #ffffff !important;
+}
